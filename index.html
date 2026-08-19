@@ -984,6 +984,100 @@
       margin: 0;
     }
 
+    .research-media-visual {
+      position: relative;
+      display: block;
+      min-height: 172px;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      border: 1px solid #d5dde6;
+      border-radius: 16px;
+      background: #f4f7fa;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.055);
+      isolation: isolate;
+    }
+
+    .research-media-visual.has-actions::after {
+      content: "";
+      position: absolute;
+      z-index: 2;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 48%;
+      pointer-events: none;
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0), rgba(15, 23, 42, 0.64));
+    }
+
+    .research-image-link {
+      position: absolute;
+      z-index: 1;
+      inset: 0;
+      display: block;
+      background: #f4f7fa;
+    }
+
+    .research-image-link:focus-visible {
+      outline: 3px solid rgba(35, 100, 170, 0.45);
+      outline-offset: -3px;
+    }
+
+    .research-media-image {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+      object-position: center;
+      background: #ffffff;
+      transition: transform 0.28s ease;
+    }
+
+    .research-media-visual:hover .research-media-image {
+      transform: scale(1.012);
+    }
+
+    .research-media-label {
+      position: absolute;
+      z-index: 3;
+      top: 10px;
+      left: 10px;
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 5px 9px;
+      border: 1px solid rgba(255, 255, 255, 0.74);
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.76);
+      color: #ffffff;
+      font-size: 0.67rem;
+      font-weight: 850;
+      line-height: 1;
+      letter-spacing: 0.015em;
+      box-shadow: 0 5px 14px rgba(15, 23, 42, 0.18);
+      backdrop-filter: blur(7px);
+      pointer-events: none;
+    }
+
+    .research-media-actions {
+      position: absolute;
+      z-index: 4;
+      right: 10px;
+      bottom: 10px;
+      left: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 6px;
+    }
+
+    .research-media-actions .video-button {
+      border-color: rgba(255, 255, 255, 0.74);
+      background: rgba(255, 255, 255, 0.94);
+      color: #173d61;
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.2);
+      backdrop-filter: blur(7px);
+    }
+
     .media-placeholder {
       position: relative;
       display: flex;
@@ -1560,7 +1654,7 @@
 <div class="section-heading section-heading--feature">
 <span class="section-kicker">Research Highlights</span>
 <h2 id="representative-research-heading">Representative Research</h2>
-<p>Selected systems and research themes demonstrating end-to-end platform ownership, broad sensing expertise, and an expanding direction in embodied intelligence.</p>
+<p>Selected systems and research themes highlighting end-to-end autonomous platform engineering, multi-modal sensing expertise, and a growing research focus on embodied intelligence.</p>
 </div>
 <div aria-label="Research summary" class="research-summary-band">
 <div><strong>5</strong><span>Autonomous platform families</span></div>
@@ -1589,8 +1683,8 @@
 <span class="role-badge">Project Manager</span>
 </header>
 <p class="case-lead">I led the end-to-end development of an ultra-compact autonomous mobility platform for both indoor and outdoor operation, combining the multi-agent mobility program with the DRB–KAIST SketchTheFuture Research Center initiative.</p>
-<ul class="case-contributions"><li><strong>Served as Project Manager</strong> and took ownership from the aluminum-profile skeleton and platform layout through final autonomous-driving demonstrations.</li><li>Selected sensor positions; installed and connected the sensing stack; completed wiring; and designed the battery, power-distribution, and electrical architecture.</li><li>Configured and validated CAN and Ethernet communication for sensors and onboard subsystems, then verified complete platform operation before autonomy deployment.</li><li>Integrated semantic perception, multi-sensor SLAM, and navigation algorithms and led successful demonstrations at KAIST Munji Campus and in an indoor underground parking facility.</li><li>Designed the platform to support both heavy-load transport and human transportation while addressing indoor–outdoor mobility requirements.</li></ul>
-<div aria-label="Key outcomes" class="outcome-chips"><span>Project Manager</span><span>Mechanical-to-Autonomy Ownership</span><span>CAN &amp; Ethernet</span><span>Indoor + Outdoor Demonstrations</span></div>
+<ul class="case-contributions"><li><strong>Served as Project Manager</strong> and led development from the aluminum-profile skeleton and platform layout through final autonomous-driving demonstrations.</li><li>Selected sensor positions; installed and connected the sensing stack; completed wiring; and designed the battery, power-distribution, and electrical architecture.</li><li>Configured and validated CAN and Ethernet communication for sensors and onboard subsystems, then verified complete platform operation before autonomy deployment.</li><li>Integrated semantic perception, multi-sensor SLAM, and navigation algorithms and led successful demonstrations at KAIST Munji Campus and in an indoor underground parking facility.</li><li>Designed the platform to support both heavy-load transport and human transportation while addressing indoor–outdoor mobility requirements.</li></ul>
+<div aria-label="Key outcomes" class="outcome-chips"><span>Project Manager</span><span>Full-Lifecycle Engineering</span><span>CAN &amp; Ethernet</span><span>Indoor + Outdoor Demonstrations</span></div>
 <div class="related-work-block">
 <span class="related-label">Related research and publications</span>
 <ul class="related-publications"><li><span>Research on Controlling Multi-agent Indoor · Outdoor Ultra-compact Autonomous Mobility</span></li><li><span>DRB–KAIST SketchTheFuture Research Center</span></li></ul>
@@ -1598,35 +1692,32 @@
 <div class="platform-resources"><a class="resource-button" href="https://youtu.be/F48djzrygjU" rel="noopener" target="_blank">YouTube<span aria-hidden="true"> ↗</span></a></div>
 <div class="research-media-grid">
 <figure class="research-media-slot" data-platform="ultra-compact-mobility" data-slot="1">
-<!-- IMAGE PLACEHOLDER: replace .media-placeholder with an <img> element when the final media is available. -->
-<div aria-label="Reserved image slot for Platform Photo" class="media-placeholder">
-<span class="placeholder-index">01</span>
-<span aria-hidden="true" class="placeholder-glyph"></span>
-<strong>Platform Photo</strong>
-<small>Reserved media slot</small>
+<div class="research-media-visual">
+<a class="research-image-link" href="assets/research/1-1.png" rel="noopener" target="_blank" aria-label="Open the full-size platform photo for ultra compact mobility">
+<img class="research-media-image" src="assets/research/1-1.png" width="765" height="927" alt="Ultra-compact autonomous mobility platform under construction with an aluminum-profile frame, seat, drivetrain, suspension, steering, and onboard electronics." loading="lazy" decoding="async" />
+</a>
+<span class="research-media-label">Platform Photo</span>
 </div>
-<figcaption>Real platform and installed hardware configuration.</figcaption>
+<figcaption>Custom aluminum-profile platform during chassis, steering, electronics, and sensing integration.</figcaption>
 </figure>
 <figure class="research-media-slot" data-platform="ultra-compact-mobility" data-slot="2">
-<!-- IMAGE PLACEHOLDER: replace .media-placeholder with an <img> element when the final media is available. -->
-<div aria-label="Reserved image slot for Platform Design" class="media-placeholder">
-<span class="placeholder-index">02</span>
-<span aria-hidden="true" class="placeholder-glyph"></span>
-<strong>Platform Design</strong>
-<small>Reserved media slot</small>
+<div class="research-media-visual">
+<a class="research-image-link" href="assets/research/1-2.png" rel="noopener" target="_blank" aria-label="Open the full-size platform design for ultra compact mobility">
+<img class="research-media-image" src="assets/research/1-2.png" width="930" height="753" alt="Three-dimensional ultra-compact mobility design showing the 3D LiDAR, 2D LiDAR, camera, GPS antenna, IMU, batteries, voltage converters, computers, and electrical connections." loading="lazy" decoding="async" />
+</a>
+<span class="research-media-label">Platform Design</span>
 </div>
-<figcaption>Mechanical, electrical, and sensor-layout design.</figcaption>
+<figcaption>Mechanical layout, sensor placement, power distribution, and onboard-computing design.</figcaption>
 </figure>
 <figure class="research-media-slot" data-platform="ultra-compact-mobility" data-slot="3">
-<!-- IMAGE PLACEHOLDER: replace .media-placeholder with an <img> element when the final media is available. -->
-<div aria-label="Reserved image slot for Driving Demonstration" class="media-placeholder">
-<span class="placeholder-index">03</span>
-<span aria-hidden="true" class="placeholder-glyph"></span>
-<strong>Driving Demonstration</strong>
-<small>Reserved media slot</small>
-<div class="placeholder-actions"><a class="video-button" href="https://youtu.be/F48djzrygjU" rel="noopener" target="_blank"><span aria-hidden="true" class="play-mark">▶</span>Watch Project Video</a></div>
+<div class="research-media-visual has-actions">
+<a class="research-image-link" href="assets/research/1-3.png" rel="noopener" target="_blank" aria-label="Open the full-size driving demonstration for ultra compact mobility">
+<img class="research-media-image" src="assets/research/1-3.png" width="620" height="411" alt="Outdoor autonomous-driving demonstration of the ultra-compact mobility platform at KAIST Munji Campus with the route and localization interface shown alongside the vehicle." loading="lazy" decoding="async" />
+</a>
+<span class="research-media-label">Driving Demonstration</span>
+<div class="research-media-actions"><a class="video-button" href="https://youtu.be/F48djzrygjU" rel="noopener" target="_blank"><span aria-hidden="true" class="play-mark">▶</span>Watch Project Video</a></div>
 </div>
-<figcaption>Autonomous operation and field-test scene.</figcaption>
+<figcaption>Outdoor autonomous-driving demonstration at KAIST Munji Campus.</figcaption>
 </figure>
 </div>
 </article>
@@ -1650,35 +1741,32 @@
 <div class="platform-resources"><a class="resource-button" href="https://mscrad4r.github.io/home/" rel="noopener" target="_blank">MSC-RAD4R Homepage<span aria-hidden="true"> ↗</span></a><a class="resource-button" href="https://www.youtube.com/watch?v=ySjc261NPDk&amp;ab_channel=minseongchoi" rel="noopener" target="_blank">YouTube<span aria-hidden="true"> ↗</span></a></div>
 <div class="research-media-grid">
 <figure class="research-media-slot" data-platform="ioniq-ev" data-slot="1">
-<!-- IMAGE PLACEHOLDER: replace .media-placeholder with an <img> element when the final media is available. -->
-<div aria-label="Reserved image slot for Platform Photo" class="media-placeholder">
-<span class="placeholder-index">01</span>
-<span aria-hidden="true" class="placeholder-glyph"></span>
-<strong>Platform Photo</strong>
-<small>Reserved media slot</small>
+<div class="research-media-visual">
+<a class="research-image-link" href="assets/research/2-1.png" rel="noopener" target="_blank" aria-label="Open the full-size platform photo for ioniq ev">
+<img class="research-media-image" src="assets/research/2-1.png" width="509" height="545" alt="KAIST IONIQ EV autonomous research vehicle equipped with a roof-mounted multi-sensor module and a front-mounted 4D radar." loading="lazy" decoding="async" />
+</a>
+<span class="research-media-label">Platform Photo</span>
 </div>
-<figcaption>Real platform and installed hardware configuration.</figcaption>
+<figcaption>IONIQ EV research vehicle with the integrated sensor module and front 4D radar.</figcaption>
 </figure>
 <figure class="research-media-slot" data-platform="ioniq-ev" data-slot="2">
-<!-- IMAGE PLACEHOLDER: replace .media-placeholder with an <img> element when the final media is available. -->
-<div aria-label="Reserved image slot for Platform Design" class="media-placeholder">
-<span class="placeholder-index">02</span>
-<span aria-hidden="true" class="placeholder-glyph"></span>
-<strong>Platform Design</strong>
-<small>Reserved media slot</small>
+<div class="research-media-visual">
+<a class="research-image-link" href="assets/research/2-2.png" rel="noopener" target="_blank" aria-label="Open the full-size platform design for ioniq ev">
+<img class="research-media-image" src="assets/research/2-2.png" width="1129" height="1104" alt="Top and side sensor-layout diagram for the IONIQ EV showing stereo cameras, LiDAR, IMU, RTK-GPS, GPS, wheel-speed sensors, and 4D radar with their coordinate axes and mounting dimensions." loading="lazy" decoding="async" />
+</a>
+<span class="research-media-label">Platform Design</span>
 </div>
-<figcaption>Mechanical, electrical, and sensor-layout design.</figcaption>
+<figcaption>Sensor geometry and coordinate layout used for radar–camera fusion and localization.</figcaption>
 </figure>
 <figure class="research-media-slot" data-platform="ioniq-ev" data-slot="3">
-<!-- IMAGE PLACEHOLDER: replace .media-placeholder with an <img> element when the final media is available. -->
-<div aria-label="Reserved image slot for Driving Demonstration" class="media-placeholder">
-<span class="placeholder-index">03</span>
-<span aria-hidden="true" class="placeholder-glyph"></span>
-<strong>Driving Demonstration</strong>
-<small>Reserved media slot</small>
-<div class="placeholder-actions"><a class="video-button" href="https://www.youtube.com/watch?v=ySjc261NPDk&amp;ab_channel=minseongchoi" rel="noopener" target="_blank"><span aria-hidden="true" class="play-mark">▶</span>Watch MSC-RAD4R Video</a></div>
+<div class="research-media-visual has-actions">
+<a class="research-image-link" href="assets/research/2-3.png" rel="noopener" target="_blank" aria-label="Open the full-size driving demonstration for ioniq ev">
+<img class="research-media-image" src="assets/research/2-3.png" width="809" height="420" alt="Synchronized IONIQ EV multi-sensor visualization showing stereo camera images, high-resolution LiDAR, 4D radar, IMU, wheel-speed, RTK-GPS, and map data during vehicle operation." loading="lazy" decoding="async" />
+</a>
+<span class="research-media-label">Driving Demonstration</span>
+<div class="research-media-actions"><a class="video-button" href="https://www.youtube.com/watch?v=ySjc261NPDk&ab_channel=minseongchoi" rel="noopener" target="_blank"><span aria-hidden="true" class="play-mark">▶</span>Watch MSC-RAD4R Video</a></div>
 </div>
-<figcaption>Autonomous operation and field-test scene.</figcaption>
+<figcaption>Synchronized perception and localization visualization recorded during vehicle operation.</figcaption>
 </figure>
 </div>
 </article>
@@ -1701,34 +1789,31 @@
 </div>
 <div class="research-media-grid">
 <figure class="research-media-slot" data-platform="f100-electric-truck" data-slot="1">
-<!-- IMAGE PLACEHOLDER: replace .media-placeholder with an <img> element when the final media is available. -->
-<div aria-label="Reserved image slot for Platform Photo" class="media-placeholder">
-<span class="placeholder-index">01</span>
-<span aria-hidden="true" class="placeholder-glyph"></span>
-<strong>Platform Photo</strong>
-<small>Reserved media slot</small>
+<div class="research-media-visual">
+<a class="research-image-link" href="assets/research/3-1.png" rel="noopener" target="_blank" aria-label="Open the full-size platform photo for f100 electric truck">
+<img class="research-media-image" src="assets/research/3-1.png" width="444" height="388" alt="F100 electric compact truck configured as an autonomous-driving research platform with roof-mounted sensing hardware." loading="lazy" decoding="async" />
+</a>
+<span class="research-media-label">Platform Photo</span>
 </div>
-<figcaption>Real platform and installed hardware configuration.</figcaption>
+<figcaption>F100 electric compact truck configured as a field-ready autonomous research platform.</figcaption>
 </figure>
 <figure class="research-media-slot" data-platform="f100-electric-truck" data-slot="2">
-<!-- IMAGE PLACEHOLDER: replace .media-placeholder with an <img> element when the final media is available. -->
-<div aria-label="Reserved image slot for Platform Design" class="media-placeholder">
-<span class="placeholder-index">02</span>
-<span aria-hidden="true" class="placeholder-glyph"></span>
-<strong>Platform Design</strong>
-<small>Reserved media slot</small>
+<div class="research-media-visual">
+<a class="research-image-link" href="assets/research/3-2.png" rel="noopener" target="_blank" aria-label="Open the full-size platform design for f100 electric truck">
+<img class="research-media-image" src="assets/research/3-2.png" width="1344" height="668" alt="F100 system architecture showing the power bank, EV main battery, computers, network switch, traction-motor controller, EPS controller, sensors, and power, Ethernet, USB, and CAN connections." loading="lazy" decoding="async" />
+</a>
+<span class="research-media-label">Platform Design</span>
 </div>
-<figcaption>Mechanical, electrical, and sensor-layout design.</figcaption>
+<figcaption>Power, computing, sensing, CAN, USB, and Ethernet integration architecture.</figcaption>
 </figure>
 <figure class="research-media-slot" data-platform="f100-electric-truck" data-slot="3">
-<!-- IMAGE PLACEHOLDER: replace .media-placeholder with an <img> element when the final media is available. -->
-<div aria-label="Reserved image slot for Driving Demonstration" class="media-placeholder">
-<span class="placeholder-index">03</span>
-<span aria-hidden="true" class="placeholder-glyph"></span>
-<strong>Driving Demonstration</strong>
-<small>Reserved media slot</small>
+<div class="research-media-visual">
+<a class="research-image-link" href="assets/research/3-3.png" rel="noopener" target="_blank" aria-label="Open the full-size driving demonstration for f100 electric truck">
+<img class="research-media-image" src="assets/research/3-3.png" width="762" height="422" alt="F100 electric compact truck performing an autonomous-driving demonstration on the KAIST Munji Campus test route." loading="lazy" decoding="async" />
+</a>
+<span class="research-media-label">Driving Demonstration</span>
 </div>
-<figcaption>Autonomous operation and field-test scene.</figcaption>
+<figcaption>Autonomous-driving demonstration on the KAIST Munji Campus test course.</figcaption>
 </figure>
 </div>
 </article>
@@ -1752,35 +1837,32 @@
 <div class="platform-resources"><a class="resource-button" href="https://youtu.be/OeremWAyrOM?feature=shared" rel="noopener" target="_blank">Video 1<span aria-hidden="true"> ↗</span></a><a class="resource-button" href="https://youtu.be/lHoVQ2n_4zk?feature=shared" rel="noopener" target="_blank">Video 2<span aria-hidden="true"> ↗</span></a><a class="resource-button" href="https://www.agrinet.co.kr/news/articleView.html?idxno=309303" rel="noopener" target="_blank">Agrinet News<span aria-hidden="true"> ↗</span></a><a class="resource-button" href="https://www.hankyung.com/article/2023081808206" rel="noopener" target="_blank">Hankyung News<span aria-hidden="true"> ↗</span></a></div>
 <div class="research-media-grid">
 <figure class="research-media-slot" data-platform="autonomous-golf-cart" data-slot="1">
-<!-- IMAGE PLACEHOLDER: replace .media-placeholder with an <img> element when the final media is available. -->
-<div aria-label="Reserved image slot for Platform Photo" class="media-placeholder">
-<span class="placeholder-index">01</span>
-<span aria-hidden="true" class="placeholder-glyph"></span>
-<strong>Platform Photo</strong>
-<small>Reserved media slot</small>
+<div class="research-media-visual">
+<a class="research-image-link" href="assets/research/4-1.jpg" rel="noopener" target="_blank" aria-label="Open the full-size platform photo for autonomous golf cart">
+<img class="research-media-image" src="assets/research/4-1.jpg" width="499" height="608" alt="Autonomous golf cart equipped with a roof-mounted LiDAR and integrated sensor module." loading="lazy" decoding="async" />
+</a>
+<span class="research-media-label">Platform Photo</span>
 </div>
-<figcaption>Real platform and installed hardware configuration.</figcaption>
+<figcaption>Autonomous golf cart equipped with the integrated roof-mounted sensing module.</figcaption>
 </figure>
 <figure class="research-media-slot" data-platform="autonomous-golf-cart" data-slot="2">
-<!-- IMAGE PLACEHOLDER: replace .media-placeholder with an <img> element when the final media is available. -->
-<div aria-label="Reserved image slot for Platform Design" class="media-placeholder">
-<span class="placeholder-index">02</span>
-<span aria-hidden="true" class="placeholder-glyph"></span>
-<strong>Platform Design</strong>
-<small>Reserved media slot</small>
+<div class="research-media-visual">
+<a class="research-image-link" href="assets/research/4-2.png" rel="noopener" target="_blank" aria-label="Open the full-size platform design for autonomous golf cart">
+<img class="research-media-image" src="assets/research/4-2.png" width="1046" height="538" alt="Top-view golf-cart sensor-module layout showing stereo cameras, radars, IMU, LiDAR, GPS antennas, sensor computer, router, converters, controller, and power-supply components." loading="lazy" decoding="async" />
+</a>
+<span class="research-media-label">Platform Design</span>
 </div>
-<figcaption>Mechanical, electrical, and sensor-layout design.</figcaption>
+<figcaption>Roof-module layout for vision, LiDAR, radar, IMU, GNSS, computing, networking, and power.</figcaption>
 </figure>
 <figure class="research-media-slot" data-platform="autonomous-golf-cart" data-slot="3">
-<!-- IMAGE PLACEHOLDER: replace .media-placeholder with an <img> element when the final media is available. -->
-<div aria-label="Reserved image slot for Driving Demonstration" class="media-placeholder">
-<span class="placeholder-index">03</span>
-<span aria-hidden="true" class="placeholder-glyph"></span>
-<strong>Driving Demonstration</strong>
-<small>Reserved media slot</small>
-<div class="placeholder-actions"><a class="video-button" href="https://youtu.be/OeremWAyrOM?feature=shared" rel="noopener" target="_blank"><span aria-hidden="true" class="play-mark">▶</span>Driving Video 1</a><a class="video-button" href="https://youtu.be/lHoVQ2n_4zk?feature=shared" rel="noopener" target="_blank"><span aria-hidden="true" class="play-mark">▶</span>Driving Video 2</a></div>
+<div class="research-media-visual has-actions">
+<a class="research-image-link" href="assets/research/4-3.png" rel="noopener" target="_blank" aria-label="Open the full-size driving demonstration for autonomous golf cart">
+<img class="research-media-image" src="assets/research/4-3.png" width="651" height="374" alt="Autonomous golf-cart driving demonstration conducted by the Daedong and KAIST project team, shown from onboard and aerial viewpoints." loading="lazy" decoding="async" />
+</a>
+<span class="research-media-label">Driving Demonstration</span>
+<div class="research-media-actions"><a class="video-button" href="https://youtu.be/OeremWAyrOM?feature=shared" rel="noopener" target="_blank"><span aria-hidden="true" class="play-mark">▶</span>Driving Video 1</a><a class="video-button" href="https://youtu.be/lHoVQ2n_4zk?feature=shared" rel="noopener" target="_blank"><span aria-hidden="true" class="play-mark">▶</span>Driving Video 2</a></div>
 </div>
-<figcaption>Autonomous operation and field-test scene.</figcaption>
+<figcaption>Autonomous-driving demonstration conducted by the Daedong–KAIST project team.</figcaption>
 </figure>
 </div>
 </article>
@@ -1804,35 +1886,32 @@
 <div class="platform-resources"><a class="resource-button" href="https://www.youtube.com/watch?v=EZ926B3pCms" rel="noopener" target="_blank">AMR Video<span aria-hidden="true"> ↗</span></a><a class="resource-button" href="https://www.youtube.com/watch?v=uKjvxZQF6WM" rel="noopener" target="_blank">ICRA Video<span aria-hidden="true"> ↗</span></a><a class="resource-button" href="https://v.daum.net/v/01fKszJqhM" rel="noopener" target="_blank">Daum News<span aria-hidden="true"> ↗</span></a></div>
 <div class="research-media-grid">
 <figure class="research-media-slot" data-platform="logistics-amr" data-slot="1">
-<!-- IMAGE PLACEHOLDER: replace .media-placeholder with an <img> element when the final media is available. -->
-<div aria-label="Reserved image slot for Platform Photo" class="media-placeholder">
-<span class="placeholder-index">01</span>
-<span aria-hidden="true" class="placeholder-glyph"></span>
-<strong>Platform Photo</strong>
-<small>Reserved media slot</small>
+<div class="research-media-visual">
+<a class="research-image-link" href="assets/research/5-1.png" rel="noopener" target="_blank" aria-label="Open the full-size platform photo for logistics amr">
+<img class="research-media-image" src="assets/research/5-1.png" width="268" height="265" alt="Custom logistics autonomous mobile robot with a mounted manipulator, onboard computing, power electronics, and a mobile base." loading="lazy" decoding="async" />
+</a>
+<span class="research-media-label">Platform Photo</span>
 </div>
-<figcaption>Real platform and installed hardware configuration.</figcaption>
+<figcaption>Custom logistics AMR with onboard computing, power electronics, and a manipulator.</figcaption>
 </figure>
 <figure class="research-media-slot" data-platform="logistics-amr" data-slot="2">
-<!-- IMAGE PLACEHOLDER: replace .media-placeholder with an <img> element when the final media is available. -->
-<div aria-label="Reserved image slot for Platform Design" class="media-placeholder">
-<span class="placeholder-index">02</span>
-<span aria-hidden="true" class="placeholder-glyph"></span>
-<strong>Platform Design</strong>
-<small>Reserved media slot</small>
+<div class="research-media-visual">
+<a class="research-image-link" href="assets/research/5-2.png" rel="noopener" target="_blank" aria-label="Open the full-size platform design for logistics amr">
+<img class="research-media-image" src="assets/research/5-2.png" width="545" height="664" alt="Logistics AMR hardware layout showing LiDAR, cameras, linear actuators, motor drivers, processing unit, battery, wheel-motor driver, wheel encoders, and caster wheels." loading="lazy" decoding="async" />
+</a>
+<span class="research-media-label">Platform Design</span>
 </div>
-<figcaption>Mechanical, electrical, and sensor-layout design.</figcaption>
+<figcaption>Hardware architecture for sensing, actuation, processing, power, and wheel control.</figcaption>
 </figure>
 <figure class="research-media-slot" data-platform="logistics-amr" data-slot="3">
-<!-- IMAGE PLACEHOLDER: replace .media-placeholder with an <img> element when the final media is available. -->
-<div aria-label="Reserved image slot for Driving Demonstration" class="media-placeholder">
-<span class="placeholder-index">03</span>
-<span aria-hidden="true" class="placeholder-glyph"></span>
-<strong>Driving Demonstration</strong>
-<small>Reserved media slot</small>
-<div class="placeholder-actions"><a class="video-button" href="https://www.youtube.com/watch?v=EZ926B3pCms" rel="noopener" target="_blank"><span aria-hidden="true" class="play-mark">▶</span>AMR Navigation Demo</a><a class="video-button" href="https://www.youtube.com/watch?v=uKjvxZQF6WM" rel="noopener" target="_blank"><span aria-hidden="true" class="play-mark">▶</span>Cooperative Manipulation</a></div>
+<div class="research-media-visual has-actions">
+<a class="research-image-link" href="assets/research/5-3.png" rel="noopener" target="_blank" aria-label="Open the full-size driving demonstration for logistics amr">
+<img class="research-media-image" src="assets/research/5-3.png" width="541" height="311" alt="Multiple logistics autonomous mobile robots operating among racks and workstations in a factory-representative multi-agent test environment." loading="lazy" decoding="async" />
+</a>
+<span class="research-media-label">Driving Demonstration</span>
+<div class="research-media-actions"><a class="video-button" href="https://www.youtube.com/watch?v=EZ926B3pCms" rel="noopener" target="_blank"><span aria-hidden="true" class="play-mark">▶</span>AMR Navigation Demo</a><a class="video-button" href="https://www.youtube.com/watch?v=uKjvxZQF6WM" rel="noopener" target="_blank"><span aria-hidden="true" class="play-mark">▶</span>Cooperative Manipulation</a></div>
 </div>
-<figcaption>Autonomous operation and field-test scene.</figcaption>
+<figcaption>Multi-agent autonomous logistics test in a factory-representative environment.</figcaption>
 </figure>
 </div>
 </article>
